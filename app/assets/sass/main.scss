@@ -1,0 +1,381 @@
+// Import NHS.UK frontend library
+@import 'node_modules/nhsuk-frontend/packages/nhsuk';
+
+// Components that are not in the NHS.UK frontend library
+@import 'components/panel-confirmation';
+@import 'components/related-nav';
+@import 'components/spinner';
+
+// Patterns that are not in the NHS.UK frontend library
+@import "patterns/step-by-step-header";
+@import "patterns/step-by-step-nav";
+@import "patterns/step-by-step-related";
+@import "patterns/related-items";
+
+
+///////////////////////////////////////////
+// Add your custom CSS/Sass styles below... 
+///////////////////////////////////////////
+
+.u-ratio {
+    position: relative;
+    overflow: hidden;
+}
+.u-ratio > * {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.u-ratio::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+    overflow: hidden;
+}
+.u-ratio--16x9::before {
+    padding-top: 56.25%;
+}
+
+// Images
+
+.nhsuk-image__img__350 {
+    width: 100%;
+    @media (min-width: 48.0625em) {
+        width: 350px;
+    }
+}
+
+.nhsuk-image__img__150 {
+    width: 100%;
+    @media (min-width: 48.0625em) {
+        width: 150px;
+    }
+}
+
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    background: white;
+    border: 5px solid black;
+    padding: nhsuk-spacing(4);
+  }
+
+// Footer
+
+.app-ogl-footer {
+    background-color: #d8dde0
+}
+
+.app-ogl-footer--text {
+    font-weight: 400;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1.71429;
+    padding-bottom: 24px;
+    color: #4c6272;
+    margin-bottom: 0;
+    padding-bottom: 24px
+}
+
+@media (min-width: 40.0625em) {
+    .app-ogl-footer--text {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1.5
+    }
+}
+
+@media print {
+    .app-ogl-footer--text {
+        font-size: 14pt;
+        line-height: 1.2
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .app-ogl-footer--text {
+        padding-bottom: 32px
+    }
+}
+
+.app-ogl-footer--text svg {
+    margin-right: 8px;
+    position: relative;
+    top: 2px
+}
+
+// Blue Button
+
+.nhsuk-button-blue {
+    background-color: $color_nhsuk-blue;
+    box-shadow: 0 4px 0 shade($color_nhsuk-blue, 40%);
+  &:hover {
+    background-color: shade($color_nhsuk-blue, 20%);
+  }
+  &:active {
+    background: shade($color_nhsuk-blue, 20%);
+    box-shadow: none;
+    color: #ffffff !important;
+    top: 4px;
+  }
+}
+
+
+///////
+
+.nhs-app-panel-heading {
+    margin-bottom: 0; }
+    @media (max-width: 48.0525em) {
+      .nhs-app-panel-heading {
+        margin: 0 -1em 0; } }
+    .nhs-app-panel-heading h1, .nhs-app-panel-heading h2, .nhs-app-panel-heading h3, .nhs-app-panel-heading h4, .nhs-app-panel-heading h5 {
+      background-color: white;
+      padding: 0.5em 16px 0.5em 16px;
+      border-top: 1px solid #d8dde0;
+      margin-bottom: 0; }
+
+      ul.list-menu {
+        border-top: 1px #D8DDE0 solid;
+        list-style: none;
+        padding-left: 0; }
+      
+      .list-menu li {
+        box-sizing: border-box;
+        background: #f0f4f5 url("../images/icon_arrow_left.svg") no-repeat center right;
+        background-position: right 1em center;
+        position: relative;
+        margin-bottom: 0em;
+        margin-left: 0em;
+        padding: 0.5em 0em 0.5em 0;
+        border-bottom: 1px #D8DDE0 solid; }
+      
+      .list-menu li a {
+        font-size: 1em;
+        display: block;
+        padding: 0;
+        text-decoration: none; }
+      
+      .list-menu li a h2 {
+        margin: 0em;
+        padding-right: 1em; }
+      
+      .list-menu li a h3 {
+        margin: 0em;
+        padding-right: 1em;
+        padding-bottom: 6px; }
+      
+      .list-menu li p {
+        margin-bottom: 0;
+        padding-right: 3em;
+        color: #212b32; }
+        
+
+
+        .list-menu {
+            margin-bottom: 1em; }
+            @media (max-width: 48.0525em) {
+              .list-menu {
+                margin: 0 -1em 1em; } }
+            .list-menu li {
+              background-color: white;
+              padding: 0;
+              margin-bottom: .2em; }
+            .list-menu li a {
+              font-weight: 600;
+              padding: 10.5px 2em 4px 1em;
+              min-height: 46px; }
+            .list-menu li a h2 {
+              padding-bottom: 6px; }
+            .list-menu li p {
+              padding-top: 0; }
+          
+          .list-menu li a:focus, .list-menu li a:hover {
+            background-color: transparent;
+            box-shadow: inset 0 0 0 4px #ffcd60; }
+            .list-menu li a:focus h2, .list-menu li a:focus h3, .list-menu li a:hover h2, .list-menu li a:hover h3 {
+              text-decoration: underline; }
+
+// ==========================================================================
+// COMPONENTS / AUTOCOMPLETE
+// ==========================================================================
+
+// needed to add a further wrapper as this 
+
+.codecomplete {
+  .autocomplete__wrapper {
+    position: relative;
+    border-radius: 4px;
+    background-color: $color_nhsuk-white;
+  }
+  
+  .autocomplete__hint,
+  .autocomplete__input {
+    background-color: $color_nhsuk-white;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 17px;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    border: 2px solid;
+    border-radius: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-bottom: 0;
+    width: 100%;
+  }
+  
+  .autocomplete__input {
+    background-color: transparent;
+    position: relative;
+  }
+  
+  .autocomplete__hint {
+    color: #bfc1c3;
+    position: absolute;
+  }
+  
+  .autocomplete__input--default {
+    padding: 4px;
+  }
+  
+  .autocomplete__input--focused {
+    outline-offset: 0;
+    outline: 3px solid #ffbf47;
+  }
+  
+  .autocomplete__input--show-all-values {
+    padding: 4px 34px 4px 4px;
+    cursor: pointer;
+  }
+  
+  .autocomplete__dropdown-arrow-down {
+    z-index: -1;
+    display: inline-block;
+    position: absolute;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+  }
+  
+  .autocomplete__menu {
+    background-color: #fff;
+    border: 2px solid #0b0c0c;
+    border-top: 0;
+    color: #34384b;
+    margin: 0;
+    max-height: 342px;
+    overflow-x: hidden;
+    padding: 0;
+    width: 100%;
+    width: calc(100% - 4px);
+  }
+  
+  .autocomplete__menu--visible {
+    display: block;
+  }
+  
+  .autocomplete__menu--hidden {
+    display: none;
+  }
+  
+  .autocomplete__menu--overlay {
+    box-shadow: rgba(0,0,0,.256863) 0 2px 6px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 100;
+  }
+  
+  .autocomplete__menu--inline {
+    position: relative;
+  }
+  
+  .autocomplete__option {
+    border-bottom: solid #bfc1c3;
+    border-width: 1px 0;
+    cursor: pointer;
+    display: block;
+    position: relative;
+  }
+  
+  .autocomplete__option > * {
+    pointer-events: none;
+  }
+  
+  .autocomplete__option:first-of-type {
+    border-top-width: 0;
+  }
+  
+  .autocomplete__option:last-of-type {
+    border-bottom-width: 0;
+  }
+  
+  .autocomplete__option--odd {
+    background-color: #fafafa;
+  }
+  
+  .autocomplete__option--focused,
+  .autocomplete__option:hover {
+    background-color: #005ea5;
+    border-color: #005ea5;
+    color: #fff;
+    outline: 0;
+  }
+  
+  .autocomplete__option--no-results {
+    background-color: #fafafa;
+    color: #646b6f;
+    cursor: not-allowed;
+  }
+  
+  .autocomplete__hint,
+  .autocomplete__input,
+  .autocomplete__option {
+    @include nhsuk-font(19);
+  }
+  
+  .autocomplete__hint,
+  .autocomplete__option {
+    padding: 8px;
+  }
+  @media (min-width:641px) {
+    .autocomplete__hint,
+    .autocomplete__input,
+    .autocomplete__option {
+      @include nhsuk-font(19);
+    }
+  }
+  
+  
+  .autocomplete__input {
+    &:focus {
+      box-shadow: 0 0 0 4px #ffb81C;
+      outline: 4px solid transparent;
+      outline-offset: 4px;
+      border: 2px solid black;
+    }
+  }
+  
+}
